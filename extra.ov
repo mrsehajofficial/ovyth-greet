@@ -1,0 +1,11 @@
+// greet :: extra.ov
+//
+// import "greet/extra" — formality, and a timestamped log line.
+
+function greet_formal(title, who) {
+    return "hello, " + title + " " + who
+}
+
+function log_line(who) {
+    return "[" + time.now() + "] " + greet(who)
+}

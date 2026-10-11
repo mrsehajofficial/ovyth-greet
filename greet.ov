@@ -1,0 +1,34 @@
+// greet :: greet.ov
+//
+// Greeting helpers — the canonical first package.
+//
+//   install:  ovc pkg install greet
+//   import:   import "greet"
+//
+// Pure functions over strings. Nothing runs at import time, so installing
+// this costs nothing until you call it.
+
+function greet(who) {
+    return "hello, " + who
+}
+
+function farewell(who) {
+    return "bye, " + who
+}
+
+function shout(who) {
+    return "HELLO, " + who.upper() + "!"
+}
+
+function whisper(who) {
+    return "hello, " + who.lower()
+}
+
+// One greeting per line, ready to print.
+function greet_each(names) {
+    lines = []
+    for name in names {
+        lines.push(greet(name))
+    }
+    return join("\n", lines)
+}
